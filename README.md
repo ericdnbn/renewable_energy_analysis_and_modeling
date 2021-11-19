@@ -3,62 +3,17 @@
 
 In this project I am going to employ data analysis, machine learning, and deep learning to assess and model the cost of solar energy in the US. 
 
-### Author: Eric Denbin
 
-<p align="center">
-  <img src=images/derma.jpeg />
-</p>
 
 ## Business Understanding
-
-Skin cancer is the most common form of cancer in the United States and worldwide. In the United States, more people are diagnosed with skin cancer each year than all other forms of cancer combined.
-
-<p align="center">
-  <img src='images/skin_cancer_infographic.png' width=500 height=200 />
-</p>
-
-Skin lesions are typically first diagnosed using clinical methods, such as single image expert consensus or serial imaging of dermoscopic images. At this stage of the diagnostic process, medical professionals are visually examining the size, color, shape, uniformity, and location of skin lesions. 
-
-<p align="center">
-  <img src='images/single_image_consensus_example.png' width=550 height=250 />
-</p>
-
-If a diagnosis is uncertain, more clinical tests may be performed. These include blood tests, allergy tests, and skin swabs, among others. At this point, if a lesion is suspicious for malignancy, or the diagnosis is still uncertain, the specific type of lesion is determined by analyzing a biopsy under a microscope.
-
-<p align="center">
-  <img src='images/biopsy.jpeg' width=400 height=200 />
-</p>
-
-When it comes to clinically diagnosing skin lesions, medical professionals often misdiagnose benign lesions as being suspicious for malignancy. According to a study published in April of 2021 in the Dermatology Research And Practice journal, while 99.06% of the lesions clinically diagnosed as being benign were actually benign, just 82.85% of all benign lesions were identified (https://www.hindawi.com/journals/drp/2021/6618990). This results in an inefficient use of resources. A study published in the Journal Of Clinical Oncology in June of 2018, estimated that biopsies of benign lesions cost between $624 million and $1.7 billion over the course of a year (https://ascopubs.org/doi/abs/10.1200/JCO.2018.36.15_suppl.e18903). Given those facts, a model could be used to identify misdiagnosed benign lesions, and therefore reduce the number of biopsies taken of benign lesions.
 
 
 
 ## Data Understanding
 
-My dataset consists of 7,179 dermoscopic images of skin lesions from the International Skin Imaging Collaboration(ISIC) archive (https://www.isic-archive.com/). All patients were 10-90 years old and the images were taken in the course of clinical care.The following file structure provides the ground truth labeling needed to train the models. If you wish to run my code, you will need to download images from the ISIC archive into the same directory format:
-```
-└── dermoscopic_images
-    ├── train
-    │    ├──benign
-    |    ├──malignant
-    │    └──unknown
-    └── test
-         ├──benign
-         ├──malignant
-         └──unknown
-```
 
-<p align="center">
-  <img src='images/class_examples.png' width=550 height=150 />
-</p>
 
-The ISIC archive contains over 150,000 images, 70,000 of which have been made public. The images can be downloaded from the gallery, and are labeled by  I downloaded only dermoscopic images to ensure a certain standard of quality across the dataset. The archive contains 23,704 dermoscopic images of benign lesions, 2,240 dermoscopic images of malignant lesions, and 2,212 dermoscopic images of unknown lesions. I downloaded 2,401 images of benign lesions for training and validation, and 980 images of benign lesions for testing. I downloaded 1500 dermoscopic images of malignant lesions for training and validation, and 600 for testing. I downloaded 1500 dermoscopic images of unknown lesions for training and validation, and 600 for testing. The class balance in my training set is 44.44% images of benign lesions, 27.78% images of malignant lesions, and 27.78% images of unknown lesions.
-
-<p align="center">
-  <img src='images/skin_lesion_class_balance.png' width=450 height=350 />
-</p>
-
-A significant limitation of the data is that the vast majority of patients represented in the archive have fair skin. This presents an ethical issue, given that it introduces bias to the model that could make it less effective in making predicitons about particular groups of patients. Unfortunately, the ISIC does not provide any information about the demographic breakdown of the archive. The only information I could find about demographics as it relates to the ISIC archive came from an article published in 2018 in the Atlantic written by Ashley Lashbrook that addresses the issue of bias in AI as it relates to making predictions about skin lesions, which said, "The ISIC, too, is looking to expand its archive to include as many skin types as possible." Without any other information, however, it is difficult to say if the archive has expanded and made any progress to date. Given this imbalance, it is important to keep in mind that the results of this project do not indicate how the model would perform broadly.
+## Data Analysis
 
 
 
