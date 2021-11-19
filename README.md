@@ -1,4 +1,4 @@
-# Solar And Wind Energy Analysis And Modeling
+# Solar Energy Analysis And Modeling
 
 This repo contains templates and examples to help you get started with your Phase 1 Project. Each of these is in a separate branch as explained below.
 
